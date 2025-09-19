@@ -1,9 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import AppRouter from './router';
-import 'antd/dist/reset.css';
+import { ConfigProvider } from 'antd';
+import Theme, { useThemeContext } from './utils/Theme';
+function ThemedApp() {
+    const { theme } = useThemeContext();
+    return (
+        <ConfigProvider theme={theme}>
+            <AppRouter />
+        </ConfigProvider>
+    );
+};
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <AppRouter />  {/* 用路由组件替代原来的 App */}
-  </React.StrictMode>,
+    <React.StrictMode>
+        <Theme>
+            <ThemedApp />
+        </Theme>
+    </React.StrictMode>
 );
