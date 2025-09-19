@@ -1,8 +1,40 @@
+/* Header 容器样式 */
 .header {
   background: var(--header-bg);
+  padding: 0 24px;
+  /*边距防贴边*/
 }
+/* Row 容器样式 - 实现两端对齐 */
+.rowContainer {
+  width: 100%;
+  justify-content: space-between;
+  /* 左右两端对齐 */
+  align-items: center;
+  /* 垂直居中 */
+}
+/* 标题列样式 */
+.titleCol {
+  display: flex;
+  align-items: center;
+}
+/* 标题文本样式 */
 .title {
   color: var(--title-color);
   margin: 0;
   line-height: 64px;
+  cursor: pointer;
+  transition: color var(--motion-duration);
+}
+.title:hover {
+  color: var(--title-hover-color);
+}
+/* 按钮列样式 */
+.buttonCol {
+  display: flex;
+  align-items: center;
+}
+/* 主题切换按钮样式 */
+.themeButton {
+  color: var(--button-color);
+  font-size: 18px;
 }
