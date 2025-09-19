@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import AppRouter from './router';
 import { ConfigProvider } from 'antd';
 import Theme, { useThemeContext } from './utils/Theme';
+import 'antd/dist/reset.css';
 function ThemedApp() {
     const { theme } = useThemeContext();
     return (
